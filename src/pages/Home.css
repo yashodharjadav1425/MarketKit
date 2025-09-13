@@ -1,0 +1,81 @@
+/* Container */
+.home-container {
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-navy);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-cta {
+  background-color: var(--color-mint);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-cta:hover {
+  background-color: var(--color-navy);
+  color: white;
+}
+
+/* Featured Products */
+.featured-products {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.featured-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Products Grid */
+.products-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Animation for Home Cards */
+.home-products .product-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.home-products .product-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.home-products .product-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.home-products .product-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

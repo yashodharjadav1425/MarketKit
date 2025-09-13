@@ -1,0 +1,238 @@
+/* main.css - Global CSS Variables and Base Styles */
+
+:root {
+  /* Your Color Palette */
+  --color-cream: #F5EEDD;     /* Light warm background */
+  --color-mint: #7AE2CF;      /* Fresh accent color */
+  --color-teal: #077A7D;      /* Primary brand color */
+  --color-navy: #06202B;      /* Dark text/contrast */
+  
+  /* Color Usage Variations */
+  --color-primary: var(--color-teal);
+  --color-secondary: var(--color-mint);
+  --color-background: var(--color-cream);
+  --color-text: var(--color-navy);
+  --color-text-light: #666;
+  
+  /* Typography */
+  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --shadow-sm: 0 1px 3px rgba(6, 32, 43, 0.1);
+  --shadow: 0 4px 6px rgba(6, 32, 43, 0.1);
+  --shadow-lg: 0 10px 25px rgba(6, 32, 43, 0.15);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+/* Links */
+a {
+  color: var(--color-teal);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-navy);
+}
+
+/* Buttons Base Style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  outline: none;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(122, 226, 207, 0.3);
+}
+
+/* Button Variants */
+.btn--primary {
+  background-color: var(--color-teal);
+  color: var(--color-cream);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-navy);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-teal);
+  border-color: var(--color-teal);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-teal);
+  color: var(--color-cream);
+}
+
+.btn--mint {
+  background-color: var(--color-mint);
+  color: var(--color-navy);
+}
+
+.btn--mint:hover {
+  background-color: var(--color-teal);
+  color: var(--color-cream);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.bg-cream { background-color: var(--color-cream); }
+.bg-mint { background-color: var(--color-mint); }
+.bg-teal { background-color: var(--color-teal); }
+.bg-navy { background-color: var(--color-navy); }
+
+.text-cream { color: var(--color-cream); }
+.text-mint { color: var(--color-mint); }
+.text-teal { color: var(--color-teal); }
+.text-navy { color: var(--color-navy); }
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Existing Responsive Design */
+@media (max-width: 768px) {
+  .grid-cols-4,
+  .grid-cols-3,
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* ===== Mobile Responsive Enhancements ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem; /* slightly smaller text for mobile */
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.1rem; }
+
+  .btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  h1 { font-size: 1.25rem; }
+  h2 { font-size: 1.1rem; }
+  h3 { font-size: 1rem; }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

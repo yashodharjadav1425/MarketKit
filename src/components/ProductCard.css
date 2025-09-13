@@ -1,0 +1,143 @@
+/* ProductCard.css */
+.product-card {
+  width: 220px;
+  height: 220px;
+  background-color: var(--color-cream);   /* Light warm background */
+  border: 1px solid var(--color-mint);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Image (fixed for better visibility) */
+.product-card img {
+  width: 100%;
+  height: 120px;          /* Slightly larger */
+  object-fit: contain;    /* Shows full product without cropping */
+  background-color: #fff; /* White background for clarity */
+  border-radius: 8px;
+  padding: 6px;           /* Spacing inside the image box */
+}
+
+/* Title */
+.product-card h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 6px 0 2px;
+  color: var(--color-navy); /* Dark text */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Price */
+.product-card p {
+  font-size: 0.85rem;
+  color: var(--color-teal); /* Brand primary for price */
+  margin: 2px 0;
+}
+
+/* Buttons */
+.product-card .actions {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.product-card button {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* View Button */
+.product-card .view-btn {
+  background-color: var(--color-mint);
+  color: var(--color-navy);
+}
+
+.product-card .view-btn:hover {
+  background-color: var(--color-teal);
+  color: var(--color-cream);
+}
+
+/* Cart Button */
+.product-card .cart-btn {
+  background-color: var(--color-teal);
+  color: var(--color-cream);
+}
+
+.product-card .cart-btn:hover {
+  background-color: var(--color-navy);
+  color: var(--color-mint);
+}
+
+/* ===== Mobile Responsive Enhancements ===== */
+@media (max-width: 768px) {
+  .product-card {
+    width: 160px;
+    height: auto; /* allow flexible height */
+    padding: 8px;
+  }
+
+  .product-card img {
+    height: 100px;
+  }
+
+  .product-card h2 {
+    font-size: 0.8rem;
+  }
+
+  .product-card p {
+    font-size: 0.75rem;
+  }
+
+  .product-card button {
+    font-size: 0.7rem;
+    padding: 5px 6px;
+  }
+
+  .product-card .actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+    max-width: 140px;
+    padding: 6px;
+  }
+
+  .product-card img {
+    height: 90px;
+  }
+
+  .product-card h2 {
+    font-size: 0.75rem;
+  }
+
+  .product-card p {
+    font-size: 0.7rem;
+  }
+
+  .product-card button {
+    font-size: 0.65rem;
+    padding: 4px 5px;
+  }
+}

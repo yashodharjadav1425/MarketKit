@@ -1,0 +1,61 @@
+/* Shop.css */
+
+/* Container padding and centering */
+.shop-container {
+  max-width: 1200px;      /* Limit container width */
+  margin: 0 auto;         /* Center container horizontally */
+  padding: 24px;          /* Space around content */
+}
+
+/* Page heading */
+.shop-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--color-teal);
+}
+
+/* Products grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;  /* Center each product card in its cell */
+}
+
+/* --- Animation for product cards --- */
+.products-grid .product-card {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 0.6s forwards;
+}
+
+/* Keyframes for scale + fade animation */
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .products-grid {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}

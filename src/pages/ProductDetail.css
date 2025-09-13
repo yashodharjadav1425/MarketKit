@@ -1,0 +1,141 @@
+/* ProductDetail.css */
+
+/* Container for the product detail page */
+.product-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* Flex layout for image and details */
+.product-detail-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .product-detail-flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Add space between image and details */
+  .product-detail-info {
+    margin-left: 40px;
+  }
+}
+
+/* Product image styling */
+.product-detail-image {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product info section */
+.product-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Product title */
+.product-detail-info h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-teal);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+/* Product description */
+.product-detail-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+  text-align: justify;
+  cursor: default;
+}
+
+/* Read More / Less clickable text */
+.product-description .read-more-text {
+  color: #077A7D;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.product-description .read-more-text:hover {
+  color: #06202B;
+}
+
+/* Product price */
+.product-detail-info .product-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #077A7D;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  font-family: serif;
+}
+
+/* Add to Cart button */
+.product-detail-info button {
+  background-color: #077A7D;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.2s, transform 0.2s;
+  margin-top: 12px;
+}
+
+.product-detail-info button:hover {
+  background-color: #06202B;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-detail-image {
+    height: 300px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 1.9rem;
+  }
+
+  .product-detail-info .product-price {
+    font-size: 1.4rem;
+  }
+
+  /* Reset margin on mobile */
+  .product-detail-info {
+    margin-left: 0;
+  }
+}
