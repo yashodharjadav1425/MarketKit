@@ -4,15 +4,34 @@ import productsData from "../data/products.json";
 import "./Home.css";
 
 const Home = () => {
-  const featuredProducts = productsData.slice(0, 3);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    // Function to determine slice based on screen width
+    const updateFeaturedProducts = () => {
+      if (window.innerWidth <= 768) {
+        // Mobile: show 0 to 4
+        setFeaturedProducts(productsData.slice(0, 4));
+      } else {
+        // Desktop/tablet: show 0 to 3
+        setFeaturedProducts(productsData.slice(0, 3));
+      }
+    };
+
+    updateFeaturedProducts(); // initial check
+
+    // Update on window resize
+    window.addEventListener("resize", updateFeaturedProducts);
+    return () => window.removeEventListener("resize", updateFeaturedProducts);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % featuredProducts.length);
     }, 3000); // switch product every 3 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [featuredProducts]);
 
   return (
     <div className="home-container">
